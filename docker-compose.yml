@@ -1,0 +1,16 @@
+version: '3'
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+    depends_on:
+      - frontend
+  frontend:
+    build: ./sign-up-page
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./sign-up-page/src/App
